@@ -1,0 +1,33 @@
+{
+  "name": "pi-codex-tool-folding",
+  "version": "0.1.0",
+  "description": "Fold every tool call in a Pi agent run into one quiet \"Worked for...\" line.",
+  "type": "module",
+  "license": "MIT",
+  "author": "Yiyang Suen",
+  "keywords": [
+    "pi-package",
+    "pi-extension",
+    "pi",
+    "tui",
+    "tool-folding",
+    "transcript"
+  ],
+  "pi": {
+    "extensions": [
+      "./extensions"
+    ]
+  },
+  "files": [
+    "extensions",
+    "README.md",
+    "LICENSE"
+  ],
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*",
+    "@earendil-works/pi-tui": "*"
+  },
+  "engines": {
+    "node": ">=20.6.0"
+  }
+}
