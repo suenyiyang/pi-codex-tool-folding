@@ -2,6 +2,8 @@
 
 Fold a whole run of tool calls into one quiet line in [Pi](https://pi.dev).
 
+![Six tool calls folded into one "Worked for 1m 15s · 6 tool calls · bash ×6  Ctrl+R ›" line above the run's answer in a Pi session](assets/tool-calls-folded.png)
+
 While Pi works, dozens of tool calls scroll past and push the actual answer off the screen. This extension groups every tool call belonging to one agent run into a single collapsed summary line:
 
 ```

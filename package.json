@@ -20,6 +20,7 @@
   },
   "files": [
     "extensions",
+    "assets",
     "README.md",
     "LICENSE"
   ],
