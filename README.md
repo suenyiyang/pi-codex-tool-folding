@@ -2,12 +2,12 @@
 
 Fold a whole run of tool calls into one quiet line in [Pi](https://pi.dev).
 
-![Six tool calls folded into one "Worked for 1m 15s · 6 tool calls · bash ×6  Ctrl+R ›" line above the run's answer in a Pi session](assets/tool-calls-folded.png)
+![Six tool calls folded into one "Worked for 1m 15s · 6 tool calls · bash ×6  Alt+O ›" line above the run's answer in a Pi session](assets/tool-calls-folded.png)
 
 While Pi works, dozens of tool calls scroll past and push the actual answer off the screen. This extension groups every tool call belonging to one agent run into a single collapsed summary line:
 
 ```
-Worked for 12s · 4 tool calls · bash ×2, read, edit  Ctrl+R ›
+Worked for 12s · 4 tool calls · bash ×2, read, edit  Alt+O ›
 ────────────────────────────────────────────────────────────
 ```
 
@@ -18,7 +18,7 @@ The final answer of the run stays fully visible right below that line. Failed to
 - **One line per run** — every tool call between two user prompts collapses into a summary with duration, count, and per-tool breakdown (`bash ×2, read, edit`).
 - **Answers stay readable** — assistant messages that only exist to carry tool calls are hidden; only the run's final text remains.
 - **Failures surface** — failed tool calls are counted in the summary and highlighted in yellow.
-- **Expand on demand** — `Ctrl+R`, a left click on the summary line, or `/tool-folding show` brings the full detail back.
+- **Expand on demand** — `Alt+O`, a left click on the summary line, or `/tool-folding show` brings the full detail back.
 - **Session resume aware** — on session start the groups are rebuilt from the session transcript, so restored history is folded too.
 - **Non-destructive** — Pi's own `Ctrl+O` tool-details toggle is left untouched; this extension only owns the outer group fold.
 - **No model-facing behavior** — purely a TUI presentation layer.
@@ -59,9 +59,9 @@ tools folded (3)
 
 | Input | Effect |
 |---|---|
-| `Ctrl+R` | Toggle folded / expanded for all completed runs |
+| `Alt+O` | Toggle folded / expanded for all completed runs |
 | Left click on a summary line | Expand |
-| `/tool-folding` | Same as `Ctrl+R` |
+| `/tool-folding` | Same as `Alt+O` |
 | `/tool-folding show` | Expand groups (compact) |
 | `/tool-folding details` | Expand groups and show inner tool details |
 | `/tool-folding hide` | Collapse groups |
@@ -69,7 +69,7 @@ tools folded (3)
 | `/tool-folding off` | Disable folding entirely and show raw output |
 | `/tool-folding status` | Report the current state |
 
-`Ctrl+H` was avoided on purpose: many terminals send it as Backspace.
+`Ctrl+H` was avoided on purpose (many terminals send it as Backspace), and `Ctrl+R` is Pi's built-in session-rename shortcut, so the toggle lives on `Alt+O` — next to Pi's own `Ctrl+O` tool-details toggle.
 
 ## How it works
 

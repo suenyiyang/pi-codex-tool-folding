@@ -39,9 +39,11 @@ const STATE_KEY = Symbol.for("pi.tool-call-folding.state");
 const TOOL_ORIGINAL_RENDER_KEY = Symbol.for("pi.tool-call-folding.tool.originalRender");
 const TOOL_ORIGINAL_HANDLE_MOUSE_KEY = Symbol.for("pi.tool-call-folding.tool.originalHandleMouse");
 const ASSISTANT_ORIGINAL_RENDER_KEY = Symbol.for("pi.tool-call-folding.assistant.originalRender");
-// Ctrl+H is commonly indistinguishable from Backspace in terminals, so use Ctrl+R.
-const TOGGLE_SHORTCUT = "ctrl+r";
-const TOGGLE_SHORTCUT_LABEL = "Ctrl+R";
+// Ctrl+H is indistinguishable from Backspace in many terminals, and Ctrl+R is
+// Pi's built-in session-rename shortcut, so use Alt+O (next to Pi's Ctrl+O,
+// which toggles inner tool details; this shortcut toggles the outer group fold).
+const TOGGLE_SHORTCUT = "alt+o";
+const TOGGLE_SHORTCUT_LABEL = "Alt+O";
 
 function getState(): ToolFoldingState {
 	const globalStore = globalThis as typeof globalThis & { [STATE_KEY]?: ToolFoldingState };
